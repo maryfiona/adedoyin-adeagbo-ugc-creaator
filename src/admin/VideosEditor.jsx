@@ -46,23 +46,13 @@ export default function VideosEditor() {
   }
 
   // Pick Video
-  function handleUpload(e) {
-    const file = e.target.files[0];
-    if (!file) return;
+ function handleUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
 
-    // Limit to 25MB
-    if (file.size > 25 * 1024 * 1024) {
-      showDialog(
-        "warning",
-        "Video Too Large",
-        "Please upload a video smaller than 25MB for faster uploads."
-      );
-      return;
-    }
-
-    setVideoFile(file);
-    setPreview(URL.createObjectURL(file));
-  }
+  setVideoFile(file);
+  setPreview(URL.createObjectURL(file));
+}
 
   // Upload Video
   async function saveVideo() {
